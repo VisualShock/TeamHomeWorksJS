@@ -87,9 +87,9 @@
       return arrayOfNumbers.sort((a, b) => Math.random() - 0.5);
     }
 
-    function isValidArrayOfNumbers(arrayTest) {
-      if (!arrayTest) return
-      let arr = arrayTest.slice();
+    function isValidArrayOfNumbers(arrayTested) {
+      if (!arrayTested) return
+      let arr = arrayTested.slice();
       let result = Math.round((arr.indexOf(0) + 1) / 4);
       arr[arr.indexOf(0)] = 16;
 
@@ -107,7 +107,6 @@
       for (let i = 1; i < 16; i++) {
         if (tds[i-1].innerHTML != i) return
       }
-
     winner.classList.remove('visibility');
     }
    
