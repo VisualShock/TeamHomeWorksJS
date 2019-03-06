@@ -40,40 +40,16 @@
   <script>
     function createNewTable() {
       let table = document.querySelector('table');
-    //   table.innerHTML =
-    //     `<tr>
-    //   <td></td>
-    //   <td></td>
-    //   <td></td>
-    //   <td></td>
-    // </tr>
-    // <tr>
-    //   <td></td>
-    //   <td></td>
-    //   <td></td>
-    //   <td></td>     
-    // </tr>
-    // <tr>
-    //   <td></td>
-    //   <td></td>
-    //   <td></td>
-    //   <td></td>     
-    // </tr>
-    // <tr>
-    //   <td></td>
-    //   <td></td>
-    //   <td></td>
-    //   <td></td>    
-    // </tr>`;
-    table.innerHTML ='';
-    for (let i = 0; i < 4; i++) {
-      let tr = document.createElement('tr');
-      for (let j = 0; j < 4; j++) {
-        let td = document.createElement('td');
-        tr.appendChild(document.createElement('td'));
+
+      table.innerHTML = '';
+      for (let i = 0; i < 4; i++) {
+        let tr = document.createElement('tr');
+        for (let j = 0; j < 4; j++) {
+          let td = document.createElement('td');
+          tr.appendChild(document.createElement('td'));
+        }
+        table.appendChild(tr);
       }
-      table.appendChild(tr);
-    }
 
       let tds = document.querySelectorAll('td');
       for (let i = 0; i < tds.length; i++) {
@@ -125,18 +101,19 @@
       return !(result % 2);
     }
 
-    ///////
+//     first run
 
     let isPressedButton = false;
-    let arrayInitialLocations;
-    let res;
     let highlightedButton;
 
-    while (!isValidArrayOfNumbers(arrayInitialLocations)) {
-      arrayInitialLocations = createLayoutOfNumbers();
+    let arrayInitialLocations = [];
+    for (let i = 1; i < 16; i++) {
+      arrayInitialLocations.push(i);  
     }
+    arrayInitialLocations.push(0);
     createNewTable();
 
+//     
 
     document.body.addEventListener('click', function (evt) {
 
